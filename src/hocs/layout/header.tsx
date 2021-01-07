@@ -9,8 +9,8 @@ import LeftMenuTab from './headers/leftMenu'
 import SettingMenu from './headers/settingsMenu'
 import AuthButtonGroup from './headers/authButtonGroup'
 
-import drakenxImage from 'root/asserts/images/drakenx.svg'
-import drakenxImageNotext from 'root/asserts/images/logo_notext.svg'
+// import drakenxImage from 'root/asserts/images/drakenx.svg'
+// import drakenxImageNotext from 'root/asserts/images/logo_notext.svg'
 
 interface HeaderProps {
   isFixed: boolean
@@ -59,9 +59,10 @@ const Header = (props: HeaderProps) => {
       <Toolbar className={classes.toolBar}>
         <Typography className={classes.title}>
           {// eslint-disable-next-line
-            minWidth767 ? <img alt='drakenx-image' src={drakenxImage}></img>
+            // minWidth767 ? <img alt='drakenx-image' src={drakenxImage}></img>
               // eslint-disable-next-line
-              : <img alt='drakenx-image-no-text' src={drakenxImageNotext} height='45px'></img>}
+              // : <img alt='drakenx-image-no-text' src={drakenxImageNotext} height='45px'></img>
+          }
         </Typography>
         {isAuthen && <LeftMenuTab minWidth767={minWidth767} />}
         <div className={classes.rightMenu}>

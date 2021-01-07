@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Grid, Typography, useMediaQuery } from '@material-ui/core'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
-import reportingRightImage from 'root/asserts/images/homeBg.svg'
+// import reportingRightImage from 'root/asserts/images/homeBg.svg'
 
 interface ReportingProps {
 
@@ -151,7 +151,7 @@ const Reporting = (props: ReportingProps) => {
     </Grid>
   </>)
 
-  const rightElement = (<img alt='reporting-item' src={reportingRightImage} className={classes.rightElementImage}></img>)
+  // const rightElement = (<img alt='reporting-item' src={reportingRightImage} className={classes.rightElementImage}></img>)
 
   return (
     <section className={classes.root}>
@@ -161,7 +161,7 @@ const Reporting = (props: ReportingProps) => {
             {leftElement}
           </Grid>
           <Grid item xs={5} className={classes.rightElement}>
-            {rightElement}
+            {/* {rightElement} */}
           </Grid>
         </Grid>
           :
@@ -170,7 +170,7 @@ const Reporting = (props: ReportingProps) => {
             {leftElement}
           </Grid>
           <Grid item xs={12} className={classes.rightElement}>
-            {rightElement}
+            {/* {rightElement} */}
           </Grid>
         </>
         }

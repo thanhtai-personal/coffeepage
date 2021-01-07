@@ -4,7 +4,7 @@ import Loading from 'root/components/loading'
 import { IHomeContainerProps } from './interfaces'
 import { reducerNames } from '../reducers/enums'
 
-const HomeComponent = React.lazy(() => import('./../components/home'))
+const HomeComponent = React.lazy(() => import('../components/home'))
 
 const HomeContainer: React.FC<IHomeContainerProps> = (props: IHomeContainerProps) => {
     return <Suspense fallback={<Loading />}>

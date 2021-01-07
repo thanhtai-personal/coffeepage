@@ -9,8 +9,8 @@ import {
   , Language as LanguageIcon
 } from '@material-ui/icons'
 import SelectionMenu from 'root/components/materialUIs/menuList'
-import enFlagImage from 'root/asserts/images/en-US.svg'
-import logodrxnew from 'root/asserts/images/logodrxnew.png'
+// import enFlagImage from 'root/asserts/images/en-US.svg'
+// import logodrxnew from 'root/asserts/images/logodrxnew.png'
 import Button, { buttonType } from 'root/components/materialUIs/button'
 
 interface ISettingMenu {
@@ -151,7 +151,7 @@ const SettingMenu = (props: ISettingMenu) => {
           <Typography>TaiTran</Typography>
           <FormControl className={classes.actions}>
             {/* eslint-disable-next-line */}
-            <Typography><img src={logodrxnew} height='20' /></Typography>
+            {/* <Typography><img src={logodrxnew} height='20' /></Typography> */}
             <Typography style={{ color: '#fb9701' }}>0.00</Typography>
           </FormControl>
         </div>}
@@ -170,7 +170,7 @@ const SettingMenu = (props: ISettingMenu) => {
             <SelectionMenu defaultValue={'english'} className={classes.languageSelection} onClickItem={() => { }} items={[{
               key: 'english', label: (
                 <div className={classes.languageMenuOption}>
-                  <img alt='en-us-img' src={enFlagImage} className={classes.selectIcon} />
+                  {/* <img alt='en-us-img' src={enFlagImage} className={classes.selectIcon} /> */}
                   <ListItemText className={classes.selectText} primary='English' />
                 </div>
               )

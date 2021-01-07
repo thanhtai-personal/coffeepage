@@ -2,11 +2,11 @@ import React, { useCallback, useState, useEffect } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 import { Link } from 'react-router-dom'
-import icAgency from 'root/asserts/images/ic-agency.svg'
-import icExchangeWallet from 'root/asserts/images/ic-exchange-wallet.svg'
-import icPlayGame from 'root/asserts/images/ic-play-game.svg'
-import icDrocketGame from 'root/asserts/images/ic-drocket-game.svg'
-import icDtradeGame from 'root/asserts/images/ic-dtrade-game.svg'
+// import icAgency from 'root/asserts/images/ic-agency.svg'
+// import icExchangeWallet from 'root/asserts/images/ic-exchange-wallet.svg'
+// import icPlayGame from 'root/asserts/images/ic-play-game.svg'
+// import icDrocketGame from 'root/asserts/images/ic-drocket-game.svg'
+// import icDtradeGame from 'root/asserts/images/ic-dtrade-game.svg'
 
 const useStyles = (props: any) => (makeStyles((theme: Theme) =>
   createStyles({
@@ -178,7 +178,7 @@ const LeftMenuTab = (props: any) => {
             onMouseLeave={mouseLeaveIcon}
           >
             {/* eslint-disable-next-line */}
-            <img alt='play-img-ic' src={icPlayGame}></img>
+            {/* <img alt='play-img-ic' src={icPlayGame}></img> */}
             {minWidth767 && <span className={classes.leftMenuListItemText}>Play</span>}
             {isOpenGameMenu && <div className={classes.gameMenuPoper}
               onMouseOver={mouseOverMenu}
@@ -191,13 +191,13 @@ const LeftMenuTab = (props: any) => {
                 </Typography>
                 <div className={[classes.gameItem, classes.cursorNotAllow, classes.borderBottom].join(' ')}>
                   {/* eslint-disable-next-line */}
-                  <img width={50} height={50} src={icDrocketGame}/>
+                  {/* <img width={50} height={50} src={icDrocketGame}/> */}
                   <span className={classes.gameMenuItemText}>DRocket</span>
                   <span className={classes.gameMenuItemSubText}>(Comming soon)</span>
                 </div>
                 <div className={[classes.gameItem, classes.cursorPointer].join(' ')}>
                   {/* eslint-disable-next-line */}
-                  <img width={50} height={50} src={icDtradeGame}/>
+                  {/* <img width={50} height={50} src={icDtradeGame}/> */}
                   <Typography className={classes.gameMenuItemText}>Dtrade</Typography>
                 </div>
               </div>
@@ -206,14 +206,14 @@ const LeftMenuTab = (props: any) => {
           <li className={classes.leftMenuListItem}>
             <Link className={classes.abstractLink} to='/agency'>
               {/* eslint-disable-next-line */}
-              <img alt='agency' src={icAgency}></img>
+              {/* <img alt='agency' src={icAgency}></img> */}
               {minWidth767 && <span className={classes.leftMenuListItemText}>AGENCY</span>}
             </Link>
           </li>
           <li className={classes.leftMenuListItem}>
             <Link className={classes.abstractLink} to='/exchange-wallet'>
               {/* eslint-disable-next-line */}
-              <img alt='wallet-img' src={icExchangeWallet}></img>
+              {/* <img alt='wallet-img' src={icExchangeWallet}></img> */}
               {minWidth767 && <span className={classes.leftMenuListItemText}>WALLET</span>}
             </Link>
           </li>

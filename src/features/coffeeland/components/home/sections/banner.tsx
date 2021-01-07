@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container, Typography } from '@material-ui/core'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
-import bannerImage from 'root/asserts/images/banner.jpg'
-import rightElementImage from 'root/asserts/images/rightElement.svg'
+// import bannerImage from 'root/asserts/images/banner.jpg'
+// import rightElementImage from 'root/asserts/images/rightElement.svg'
 import Button, { buttonType } from 'root/components/materialUIs/button'
 
 interface BannerProps {
@@ -12,7 +12,7 @@ interface BannerProps {
 const useStyles = (props: any) => (makeStyles((theme: Theme) =>
   createStyles({
     banner: {
-      backgroundImage: `url(${bannerImage})`,
+      // backgroundImage: `url(${bannerImage})`,
       backgroundSize: 'cover',
       padding: '20px 0 0',
       overflowX: 'hidden',
@@ -143,7 +143,7 @@ const Banner = (props: BannerProps) => {
       The ultimate entertainment platform within the Draken DeFi Universe.
       DRX token is the currency to access all features and games.
             </Typography></>
-  const rightElement = <img alt='banner-item' src={rightElementImage} className={classes.rightElementImage}></img>
+  // const rightElement = <img alt='banner-item' src={rightElementImage} className={classes.rightElementImage}></img>
 
   return (
     <section className={classes.banner}>
@@ -152,7 +152,7 @@ const Banner = (props: BannerProps) => {
           {leftElement}
           <Button type={buttonType.Default} className={classes.playNowBtn}>PLAY NOW</Button>
         </aside>
-        {rightElement}
+        {/* {rightElement} */}
       </Container>
     </section>
   )

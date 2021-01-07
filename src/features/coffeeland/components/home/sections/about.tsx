@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container, Typography } from '@material-ui/core'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
-import startDividerImage from 'root/asserts/images/startDevider.svg'
-import endDividerImage from 'root/asserts/images/endDevider.svg'
+// import startDividerImage from 'root/asserts/images/startDevider.svg'
+// import endDividerImage from 'root/asserts/images/endDevider.svg'
 
 interface AboutProps {
 
@@ -58,7 +58,7 @@ const Reporting = (props: AboutProps) => {
   return (
     <section className={classes.root}>
       <Container maxWidth='lg' className={classes.aboutContent}>
-        <img alt='about-start' style={{ width: '100%' }} src={startDividerImage}></img>
+        {/* <img alt='about-start' style={{ width: '100%' }} src={startDividerImage}></img> */}
         <Typography className={classes.content} align={'center'}>
           The combination of Games and Blockchain has created
           a fascinating solution for financial management in the virtual world.
@@ -69,7 +69,7 @@ const Reporting = (props: AboutProps) => {
           DRK Chain to provide more entertaining-and-profitable options!
           <Typography align={'center'} className={classes.clientName}>Jacob Jones - GAMER</Typography>
         </Typography>
-        <img alt='about-end' style={{ width: '100%' }} src={endDividerImage}></img>
+        {/* <img alt='about-end' style={{ width: '100%' }} src={endDividerImage}></img> */}
       </Container>
     </section>
   )

@@ -4,9 +4,9 @@ import {
 } from '@material-ui/core'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { PlayArrow as PlayArrowIcon } from '@material-ui/icons'
-import dRocketImage from 'root/asserts/images/icGame1.svg'
-import dRKatsImage from 'root/asserts/images/icGame2.svg'
-import dTradeImage from 'root/asserts/images/icGame3.svg'
+// import dRocketImage from 'root/asserts/images/icGame1.svg'
+// import dRKatsImage from 'root/asserts/images/icGame2.svg'
+// import dTradeImage from 'root/asserts/images/icGame3.svg'
 import Card from 'root/components/materialUIs/card'
 interface EntertainmentProps {
 
@@ -15,7 +15,7 @@ interface EntertainmentProps {
 const cards = [
   {
     key: 'DTrade',
-    mediaImage: dTradeImage,
+    // mediaImage: dTradeImage,
     content: {
       title: 'DTrade',
       description: `
@@ -30,7 +30,7 @@ const cards = [
   },
   {
     key: 'DRocket',
-    mediaImage: dRocketImage,
+    // mediaImage: dRocketImage,
     content: {
       title: 'DRocket',
       description: `How high can your rocket reach? Try and earn more DRX now!`
@@ -43,7 +43,7 @@ const cards = [
   },
   {
     key: 'DRKats',
-    mediaImage: dRKatsImage,
+    // mediaImage: dRKatsImage,
     content: {
       title: 'DRKats',
       description: `Gain insight into the market environment in seconds. Make better decisions and realise gains in minutes.`

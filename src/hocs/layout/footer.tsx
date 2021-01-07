@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { Grid, Container, Typography, useMediaQuery } from '@material-ui/core'
-import drakenxImage from 'root/asserts/images/drakenx.svg'
+// import drakenxImage from 'root/asserts/images/drakenx.svg'
 import {
   Facebook as FacebookIcon
   , Telegram as TelegramIcon
@@ -86,7 +86,7 @@ const Footer = (props: FooterProps) => {
   const classes = useStyles(props)
 
   const copyRight = <>
-    <img alt='footer-logo' src={drakenxImage} className={classes.footerLogo} />
+    {/* <img alt='footer-logo' src={drakenxImage} className={classes.footerLogo} /> */}
     <Typography className={classes.footerText} variant='body2'>© Copyright by DrakenX 2020.</Typography>
     <Typography className={classes.footerText} variant='body2'>All rights reserved</Typography></>
   const introduceASupport = <><Typography className={classes.footerTextTitle} variant='body2'>Instroduce & support</Typography>

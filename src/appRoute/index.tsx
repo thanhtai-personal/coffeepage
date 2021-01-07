@@ -3,13 +3,12 @@ import { Route, Switch } from 'react-router'
 import { BrowserRouter } from 'react-router-dom'
 
 import appRouteSingleton from 'root/managers/appRoute/singleton'
-import blockChainRoutes from 'root/features/blockChain/routes'
-import { RouteGroups } from './enums'
+import homeRoutes from 'root/features/coffeeland/routes'
 
 const appRouteManager = appRouteSingleton.getInstance()
 
 function AppRoute () {
-  appRouteManager.add(RouteGroups.blockChainGames, blockChainRoutes)
+  appRouteManager.add('home', homeRoutes)
   return (
     <BrowserRouter basename='/'> { /* your usual react-router v4/v5 routing */}
       <Switch>
