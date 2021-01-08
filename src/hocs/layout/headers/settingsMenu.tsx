@@ -8,6 +8,7 @@ import {
   Settings as SettingsIcon
   , Language as LanguageIcon
 } from '@material-ui/icons'
+import Color from 'root/color'
 import SelectionMenu from 'root/components/materialUIs/menuList'
 // import enFlagImage from 'root/asserts/images/en-US.svg'
 // import logodrxnew from 'root/asserts/images/logodrxnew.png'
@@ -21,7 +22,7 @@ interface ISettingMenu {
 const useStyles = (props: ISettingMenu) => (makeStyles((theme: Theme) =>
   createStyles({
     settingsIcon: {
-      borderLeft: '1px solid #242a31',
+      borderLeft: `1px solid ${Color.borderColor}`,
       borderRadius: 0,
       cursor: 'pointer',
       padding: '20px',
@@ -29,7 +30,7 @@ const useStyles = (props: ISettingMenu) => (makeStyles((theme: Theme) =>
         marginLeft: 0
       },
       '&:hover': {
-        borderBottom: '1px solid #556df6'
+        // borderBottom: '1px solid #556df6'
       }
     },
     menuLanguages: {
@@ -146,12 +147,11 @@ const SettingMenu = (props: ISettingMenu) => {
         color='inherit'
       ><SettingsIcon />
       </IconButton>
+      {/*
       <Grid className={classes.menuLanguages} style={{ display: isOpenLanguage ? 'flex' : 'none' }}>
         {isAuthen && !minWidth1190 && <div className={classes.settingItems}>
           <Typography>TaiTran</Typography>
           <FormControl className={classes.actions}>
-            {/* eslint-disable-next-line */}
-            {/* <Typography><img src={logodrxnew} height='20' /></Typography> */}
             <Typography style={{ color: '#fb9701' }}>0.00</Typography>
           </FormControl>
         </div>}
@@ -170,7 +170,6 @@ const SettingMenu = (props: ISettingMenu) => {
             <SelectionMenu defaultValue={'english'} className={classes.languageSelection} onClickItem={() => { }} items={[{
               key: 'english', label: (
                 <div className={classes.languageMenuOption}>
-                  {/* <img alt='en-us-img' src={enFlagImage} className={classes.selectIcon} /> */}
                   <ListItemText className={classes.selectText} primary='English' />
                 </div>
               )
@@ -184,7 +183,7 @@ const SettingMenu = (props: ISettingMenu) => {
                 Sign Out
           </Button>
         </div>}
-      </Grid>
+      </Grid> */}
     </>
   )
 }
