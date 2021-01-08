@@ -3,12 +3,16 @@ import { IHomeProps } from './interfaces'
 import { useLazyLoadSection } from 'root/utils'
 import Sections from './sections'
 import { ElementIds } from 'root/constants'
-import Logo_300 from 'root/asserts/images/logo_300.png'
+import service1 from 'root/asserts/images/1lg.png'
+import product1 from 'root/asserts/images/3lg.png'
+import product2 from 'root/asserts/images/4lg.jpg'
+import product3 from 'root/asserts/images/5lg.jpg'
+import product4 from 'root/asserts/images/6lg.jpg'
 
 const products = [
   {
     key: 'phin',
-    mediaImage: Logo_300,
+    mediaImage: product1,
     content: {
       title: 'Phin',
       description: `
@@ -18,7 +22,7 @@ const products = [
   },
   {
     key: 'espresso',
-    mediaImage: Logo_300,
+    mediaImage: product2,
     content: {
       title: 'Espresso',
       description: `How high can your rocket reach? Try and earn more DRX now!`
@@ -26,7 +30,15 @@ const products = [
   },
   {
     key: 'brewing',
-    mediaImage: Logo_300,
+    mediaImage: product3,
+    content: {
+      title: 'Brewing',
+      description: `How high can your rocket reach? Try and earn more DRX now!`
+    }
+  },
+  {
+    key: 'brewing',
+    mediaImage: product4,
     content: {
       title: 'Brewing',
       description: `How high can your rocket reach? Try and earn more DRX now!`
@@ -37,7 +49,7 @@ const products = [
 const services = [
   {
     key: 'silecafe',
-    mediaImage: Logo_300,
+    mediaImage: service1,
     content: {
       title: 'Cung cấp cà phê sỉ và lẻ',
       description: `Cung cấp cà phê sỉ và lẻ. Cung cấp cà phê sỉ và lẻ. Cung cấp cà phê sỉ và lẻ. Cung cấp cà phê sỉ và lẻ. Cung cấp cà phê sỉ và lẻ. `
@@ -45,7 +57,8 @@ const services = [
   },
   {
     key: 'giacong',
-    mediaImage: Logo_300,
+    mediaImage: <iframe width='400' height='400' src='https://www.youtube.com/embed/641YP-I2v6U' allow='encrypted-media;' ></iframe>,
+    isVideo: true,
     content: {
       title: 'Rang xay cà phê gia công',
       description: `Rang xay cà phê gia công. Rang xay cà phê gia công. Rang xay cà phê gia công. Rang xay cà phê gia công. Rang xay cà phê gia công`

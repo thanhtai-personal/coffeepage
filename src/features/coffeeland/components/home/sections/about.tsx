@@ -91,6 +91,7 @@ const Reporting = (props: any) => {
               content={card.content}
               actions={card.actions}
               disabled={card.disabled}
+              isVideo={card.isVideo}
             />
           </Grid>))}
         </Grid>

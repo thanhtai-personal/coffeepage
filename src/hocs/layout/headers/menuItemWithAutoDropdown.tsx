@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react'
+import React, { useCallback, useState } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 import Color from 'root/color'
@@ -94,42 +94,17 @@ const LeftMenuItemWithAutoDropdown = (props: any) => {
   const { minWidth767, text, children } = props
   const classes = useStyles(props)
   const [isOpenGameMenu, setIsOpenGameMenu] = useState(false)
-  const [mouseInIcon, setMouseInIcon] = useState(false)
-  const [mouseInMenu, setMouseInMenu] = useState(false)
 
-  const mouseOverIcon = useCallback(() => {
-    setTimeout(() => {
-      setMouseInIcon(true)
-    }, 1000)
-    setIsOpenGameMenu(true)
-  }, [setIsOpenGameMenu, setMouseInIcon])
-
-  const mouseLeaveIcon = useCallback(() => {
-    setMouseInIcon(false)
-  }, [setMouseInIcon])
-
-  const mouseOverMenu = useCallback(() => {
-    setMouseInMenu(true)
-  }, [setMouseInMenu])
-
-  const mouseLeaveMenu = useCallback(() => {
-    setMouseInMenu(false)
-  }, [setMouseInMenu])
-
-  useEffect(() => {
-    if (!mouseInMenu && !mouseInMenu) setIsOpenGameMenu(false)
-  }, [mouseInIcon, mouseInMenu, setIsOpenGameMenu])
+  const handleClickItem = useCallback(() => {
+    setIsOpenGameMenu(!isOpenGameMenu)
+  }, [setIsOpenGameMenu, isOpenGameMenu])
 
   return (
     <li className={classes.leftMenuListItem}
-      onMouseOver={mouseOverIcon}
-      onMouseLeave={mouseLeaveIcon}
+      onClick={handleClickItem}
     >
       {minWidth767 && <span className={classes.leftMenuListItemText}>{text.label}</span>}
-      {isOpenGameMenu && <div className={classes.gameMenuPoper}
-        onMouseOver={mouseOverMenu}
-        onMouseLeave={mouseLeaveMenu}
-      >
+      {isOpenGameMenu && <div className={classes.gameMenuPoper}>
         <div className={classes.gameMenuArrow}></div>
         <div className={classes.gameMenu}>
           <Typography className={classes.title}>

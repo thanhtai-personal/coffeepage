@@ -1,5 +1,6 @@
 import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
+import bannerImage from 'root/asserts/images/bannerlg.jpg'
 
 interface BannerProps {
 
@@ -8,12 +9,13 @@ interface BannerProps {
 const useStyles = (props: any) => (makeStyles((theme: Theme) =>
   createStyles({
     banner: {
-      backgroundImage: `url(https://phinxanh.com/wp-content/uploads/2020/01/cover_web-01.jpg)`,
+      backgroundImage: `url(${bannerImage})`,
       backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
       padding: '20px 0 0',
       overflowX: 'hidden',
       width: '100%',
-      minHeight: '450px',
+      minHeight: '820px',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',

@@ -1,6 +1,6 @@
 import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
-import { Card, CardActions, CardContent, Typography } from '@material-ui/core'
+import { Card, CardActions, CardContent, Typography, CardMedia } from '@material-ui/core'
 import Button, { buttonType } from './button'
 import Color from 'root/color'
 
@@ -29,7 +29,6 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) => createStyles({
     fontSize: '100%',
     verticalAlign: 'baseline',
     borderRadius: '2%',
-    backgroundColor: Color.mainBgColor,
     '&:hover': {
       cursor: 'pointer',
       animation: `$slideInFromTop 1000ms  ${theme.transitions.easing.easeInOut}`,
@@ -87,14 +86,16 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) => createStyles({
 
 const MaterialUICard = (props: any) => {
   const classes = useStyles(props)
-  const { mediaImage, className, content: { title, description }, actions = {} } = props
+  const { isVideo = false, mediaImage, className, content: { title, description }, actions = {} } = props
   const { buttonText, ButtonIcon, disabled } = actions
   return (
     <Card className={[classes.root, className].join(' ')}>
-      <img
+      {isVideo ? 
+      mediaImage
+      : <img
         className={classes.media}
         src={mediaImage}
-      />
+      />}
       <CardContent className={classes.cardContent}>
         <Typography className={classes.titleText}>{title}</Typography>
         <Typography className={classes.contentText}>{description}</Typography>
