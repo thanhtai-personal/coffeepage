@@ -93,7 +93,7 @@ const MaterialUICard = (props: any) => {
       {isVideo ? 
       mediaImage
       : <img
-        className={classes.media}
+        className={[classes.media, 'lazy'].join(' ')}
         src={mediaImage}
       />}
       <CardContent className={classes.cardContent}>

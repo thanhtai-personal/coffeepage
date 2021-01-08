@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IHomeProps } from './interfaces'
 import { useLazyLoadSection } from 'root/utils'
 import Sections from './sections'
@@ -71,6 +71,33 @@ const HomeComponent: React.FC<IHomeProps> = (props: IHomeProps) => {
     const Entertainment = useLazyLoadSection(Sections.Entertainment, { elementId: 'entertainment', height: '533px' })
     const Reporting = useLazyLoadSection(Sections.Reporting, { elementId: 'reporting', height: '304px' })
     const About = useLazyLoadSection(Sections.About, { elementId: 'about', height: '270px' })
+
+    useEffect(() => {
+      document.addEventListener('DOMContentLoaded', function() {
+        var lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+      
+        if ('IntersectionObserver' in window) {
+          let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry: any) {
+              if (entry.isIntersecting) {
+                let lazyImage = entry.target
+                lazyImage.src = lazyImage.dataset.src
+                lazyImage.srcset = lazyImage.dataset.srcset
+                lazyImage.classList.remove('lazy')
+                lazyImageObserver.unobserve(lazyImage)
+              }
+            })
+          })
+      
+          lazyImages.forEach(function(lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+          });
+        } else {
+          // Possibly fall back to event handlers here
+        }
+      });
+    }, [])
+
     return (
         <>
             <Banner />

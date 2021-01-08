@@ -88,7 +88,7 @@ const Footer = (props: FooterProps) => {
 
   const copyRight = <>
     <Typography align='center' className={classes.footerLogoWrapper}>
-      <img alt='footer-logo' src={logo_90} className={classes.footerLogo} />
+      <img alt='footer-logo' src={logo_90} className={[classes.footerLogo, 'lazy'].join(' ')} />
     </Typography>
     <Typography className={classes.footerText} variant='body2'>{'FRD Coffee: Chất lượng và bền vững'}</Typography>
     </>

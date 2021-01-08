@@ -75,7 +75,7 @@ const AntTextField = (props: any) => {
       <div className={classes.formInput}>
         <input {...nestedProps} className={classes.inputArea} type={!isShowPassword ? type : ''} name={name} value={value} onChange={handleChange} />
         {type=== 'password' && <img onClick={handleEyeClick}
-          className={classes.eyeIcon}
+          className={[classes.eyeIcon, 'lazy'].join(' ')}
           alt='eye-icon'
           src={isShowPassword ? eyeOpenIcon : eyeIcon}
         />}

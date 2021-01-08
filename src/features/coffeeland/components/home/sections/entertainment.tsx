@@ -49,7 +49,7 @@ const Entertainment = (props: EntertainmentProps) => {
       <Container maxWidth='lg' className={classes.container}>
        <Typography className={classes.titleText} align='center'>{'FRD Coffee xin chào!'}</Typography>
        <Typography className={classes.logoContent} align='center'>
-         <img className={classes.logoImage} alt='logo-image' src={logo300}></img>
+         <img className={[classes.logoImage, 'lazy'].join(' ')} alt='logo-image' src={logo300}></img>
        </Typography>
        <Typography align='center'>
          <div className={classes.decorateLogo}></div>
