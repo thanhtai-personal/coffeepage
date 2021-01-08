@@ -21,7 +21,11 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) =>
     title: {
       color: Color.coffee,
       textTransform: 'uppercase',
-      marginTop: theme.spacing(2)
+      marginTop: theme.spacing(2),
+      fontWeight: 600,
+      '&:hover': {
+        textDecoration: `underline  ${Color.mainBgColor}`
+      }
     },
     subTitle: {
       fontSize: '18px',
@@ -42,6 +46,7 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) =>
     },
     gameCards: {
       display: 'flex',
+      marginTop: theme.spacing(3),
       '@media(max-width:1190px)': {
         width: '100%',
         flexWrap: 'wrap',

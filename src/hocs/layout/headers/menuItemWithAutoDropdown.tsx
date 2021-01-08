@@ -1,6 +1,7 @@
 import React, { useCallback, useState, useEffect } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
+import Color from 'root/color'
 
 const useStyles = (props: any) => (makeStyles((theme: Theme) =>
   createStyles({
@@ -20,7 +21,7 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) =>
       }
     },
     leftMenuListItemText: {
-      color: '#77818b',
+      color: Color.coffee,
       fontSize: '12px',
       fontWeight: 500,
       textTransform: 'uppercase',
@@ -28,26 +29,37 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) =>
     },
     gameMenuPoper: {
       minWidth: '58px',
-      //left: '216px',
       top: '50px',
       paddingTop: '10px',
       boxSizing: 'border-box',
       margin: 0,
       padding: 0,
-      color: '#fff',
+      color: Color.coffee,
+      backgroundColor: Color.mainBgColor,
       fontSize: '14px',
       fontVariant: 'tabular-nums',
       lineHeight: '1.5715',
       listStyle: 'none',
-      fontFeatureSettings: '"tnum","tnum"',
+      fontFeatureSettings: "tnum','tnum'",
       position: 'absolute',
       display: 'block',
+      animation: `$slideInFromTop 500ms  ${theme.transitions.easing.easeInOut}`,
+    },
+    '@keyframes slideInFromTop': {
+      '0%': {
+        opacity: 0,
+        transform: 'scaleY(0)'
+      },
+      '100%': {
+        opacity: 1,
+        transform: 'scaleY(1)'
+      }
     },
     gameMenuArrow: {
       left: '50%',
       transform: 'translateX(-50%) rotate(45deg)',
       top: '6px',
-      borderColor: '#556df6 transparent transparent #556df6',
+      borderColor: `${Color.borderColor} transparent transparent ${Color.borderColor}`,
       boxShadow: '-2px -2px 5px rgba(0,0,0,.06)',
       position: 'absolute',
       display: 'block',
@@ -57,19 +69,21 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) =>
       borderStyle: 'solid',
       borderWidth: '4.24264069px',
       boxSizing: 'border-box',
+      color: Color.mainBgColor,
+      backgroundColor: Color.mainBgColor,
     },
     gameMenu: {
       display: 'flex',
       flexDirection: 'column',
-      backgroundColor: '#2d2f3e',
+      backgroundColor: Color.mainBgColor,
       borderRadius: '6px',
-      color: '#fff',
+      color: Color.coffee,
       width: '220px',
       boxSizing: 'border-box',
     },
     title: {
       padding: '8px',
-      color: '#999db4',
+      color: Color.coffee,
       fontSize: '10px',
       borderBottom: '1px solid #44494d',
     }
@@ -86,7 +100,7 @@ const LeftMenuItemWithAutoDropdown = (props: any) => {
   const mouseOverIcon = useCallback(() => {
     setTimeout(() => {
       setMouseInIcon(true)
-    }, 1500)
+    }, 1000)
     setIsOpenGameMenu(true)
   }, [setIsOpenGameMenu, setMouseInIcon])
 

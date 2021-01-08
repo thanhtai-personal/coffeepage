@@ -29,7 +29,19 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) => createStyles({
     fontSize: '100%',
     verticalAlign: 'baseline',
     borderRadius: '2%',
-    backgroundColor: Color.mainBgColor
+    backgroundColor: Color.mainBgColor,
+    '&:hover': {
+      cursor: 'pointer',
+      animation: `$slideInFromTop 1000ms  ${theme.transitions.easing.easeInOut}`,
+    }
+  },
+  '@keyframes slideInFromTop': {
+    '0%': {
+      opacity: 0,
+    },
+    '100%': {
+      opacity: 1,
+    },
   },
   actionButton: {
     display: 'flex',

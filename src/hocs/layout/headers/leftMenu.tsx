@@ -44,18 +44,11 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) =>
       }
     },
     leftMenuListItemText: {
-      color: '#77818b',
+      color: Color.coffee,
       fontSize: '12px',
       fontWeight: 500,
       textTransform: 'uppercase',
       marginLeft: '4px',
-    },
-    abstractLink: {
-      textDecoration: 'none',
-      display: 'flex',
-      alignItems: 'center',
-      flexDirection: 'row',
-      justifyContent: 'center'
     },
     gameItem: {
       padding: '8px',
@@ -63,7 +56,8 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) =>
       alignItems: 'center',
       boxSizing: 'border-box',
       '&:hover': {
-        backgroundColor: '#15181D'
+        backgroundColor: Color.coffee,
+        color: Color.mainBgColor
       }
     },
     cursorNotAllow: {
@@ -73,13 +67,12 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) =>
       cursor: 'pointer',
     },
     borderBottom: {
-      borderBottom: '1px solid #44494d',
+      borderBottom: `1px solid ${Color.borderColor}`,
     },
     gameMenuItemText: {
-      color: '#fff',
       fontSize: '14px',
       boxSizing: 'border-box',
-      textTransform: 'uppercase',
+      textTransform: 'uppercase'
     }
   }),
 ))()
@@ -138,9 +131,7 @@ const LeftMenuTab = (props: any) => {
             </div>
           </MenuItemWithAutoDropdown>
           <li className={classes.leftMenuListItem} onClick={handleClickContact}>
-            {/* <Link className={classes.abstractLink} > */}
               {minWidth767 && <span className={classes.leftMenuListItemText}>{'Liên hệ'}</span>}
-            {/* </Link> */}
           </li>
         </ul>
       </div>
