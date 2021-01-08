@@ -1,12 +1,14 @@
 import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { Grid, Container, Typography, useMediaQuery } from '@material-ui/core'
-// import drakenxImage from 'root/asserts/images/drakenx.svg'
+import logo_90 from 'root/asserts/images/logo_90.png'
 import {
   Facebook as FacebookIcon
   , Telegram as TelegramIcon
   , Twitter as TwitterIcon
 } from '@material-ui/icons'
+import { ElementIds } from 'root/constants'
+import Color from 'root/color'
 
 interface FooterProps {
 
@@ -15,34 +17,25 @@ interface FooterProps {
 const useStyles = (props: FooterProps) => (makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: '#15181d',
+      backgroundColor: Color.mainBgColor,
       paddingTop: theme.spacing(5),
       paddingBottom: theme.spacing(5),
     },
-    riskWarning: {
-      fontWeight: 400,
-      fontSize: '10px',
-      lineHeight: '18px',
-      color: '#77818b',
-      borderTop: '1px solid #292929',
-      paddingTop: '25px',
-      marginTop: '25px',
-    },
     footerText: {
-      fontWeight: 400,
+      fontWeight: 600,
       fontSize: '14px',
       paddingBottom: '15px',
       display: 'block',
-      color: '#77818b',
+      color: Color.coffee,
+      textTransform: 'uppercase'
     },
     footerLogo: {
       marginBottom: '20px',
-      width: '140px'
     },
     footerTextTitle: {
       fontWeight: 600,
       fontSize: '13px',
-      color: '#bfcbd0',
+      color: '#000',
       paddingBottom: '15px',
       display: 'block',
     },
@@ -68,15 +61,23 @@ const useStyles = (props: FooterProps) => (makeStyles((theme: Theme) =>
     },
     telegram: {
       opacity: 1,
-      color: '#3ac4ff'
+      color: Color.coffee
     },
     facebook: {
       opacity: 1,
       color: '#297cfa'
     },
-    twiter: {
-      opacity: 1,
-      color: '#3ac4ff'
+    riskWarning: {
+      fontWeight: 400,
+      fontSize: '10px',
+      lineHeight: '18px',
+      color: '#77818b',
+      borderTop: '1px solid #292929',
+      paddingTop: '25px',
+      marginTop: '25px',
+    },
+    footerLogoWrapper: {
+      width: '270px'
     }
   }),
 ))()
@@ -86,49 +87,37 @@ const Footer = (props: FooterProps) => {
   const classes = useStyles(props)
 
   const copyRight = <>
-    {/* <img alt='footer-logo' src={drakenxImage} className={classes.footerLogo} /> */}
-    <Typography className={classes.footerText} variant='body2'>© Copyright by DrakenX 2020.</Typography>
-    <Typography className={classes.footerText} variant='body2'>All rights reserved</Typography></>
-  const introduceASupport = <><Typography className={classes.footerTextTitle} variant='body2'>Instroduce & support</Typography>
-    <Typography className={classes.linkText} variant='body2'>About us</Typography>
-    <Typography className={classes.linkText} variant='body2'>FAQs</Typography></>
-  const securityAPrivacy = <><Typography className={classes.footerTextTitle} variant='body2'>Security & Privacy</Typography>
-    <Typography className={classes.linkText} variant='body2'>Terms and Conditions</Typography>
-    <Typography className={classes.linkText} variant='body2'>Risk Warning</Typography>
-    <Typography className={classes.linkText} variant='body2'>Liability and Indemnity</Typography></>
-  const social = <><Typography className={classes.footerTextTitle} variant='body2'>Community</Typography>
-    <Typography className={[classes.linkText, classes.telegram].join(' ')} variant='body2'>
-      <TelegramIcon className={classes.socialIcon} />Telegram
+    <Typography align='center' className={classes.footerLogoWrapper}>
+      <img alt='footer-logo' src={logo_90} className={classes.footerLogo} />
     </Typography>
+    <Typography className={classes.footerText} variant='body2'>{'FRD Coffee: Chất lượng và bền vững'}</Typography>
+    </>
+  const social = <><Typography className={classes.footerTextTitle} variant='body2'>{'Cộng đồng:'}</Typography>
     <Typography className={[classes.linkText, classes.facebook].join(' ')} variant='body2'>
-      <FacebookIcon  className={classes.socialIcon} />Facebook</Typography>
-    <Typography className={[classes.linkText, classes.twiter].join(' ')} variant='body2'>
-      <TwitterIcon  className={classes.socialIcon} />Twitter
-    </Typography></>
+      <FacebookIcon className={classes.socialIcon} />{'Facebook'}</Typography>
+    </>
+  const contact = <><Typography className={classes.footerTextTitle} variant='body2'>{'Liên hệ: '}</Typography>
+    <Typography className={[classes.linkText, classes.telegram].join(' ')} variant='body2'>
+      <TelegramIcon className={classes.socialIcon} />{'0367888522'}
+    </Typography>
+  </>
   const warning = <Grid item xs={12} className={classes.riskWarning}>
-    <b>Risk Warning: </b>
-  Trading and investing in digital options involves significant level of risk and is not suitable
-    and/or appropriate for all clients. Please make sure you carefully consider your investment objectives,
-    level of experience and risk appetite before buying or selling any digital asset. You should be aware
-      of and fully understand all the risks associated with trading and investing in digital assets
-      , you should not invest funds you cannot afford to lose. You are granted limited non-exclusive rights
-      to use the IP contained in this site for personal, non-commercial, non-transferable use only in
-        relation to the services offered on the site
+  {`FRD Coffee là đơn vị rang xay cà phê đến từ Đăk Nông, rất hân hạnh được mang đến cho quý khách hương vị nồng nàn của cà phê tây nguyên Việt Nam.`}
 </Grid>
   return (
-    <div className={classes.root}>
+    <div id={ElementIds.contact} className={classes.root}>
       <Container>
         {minWidth800 ? <Grid container spacing={3}>
           <Grid item xs={4}>{copyRight}</Grid>
-          <Grid item xs={3}>{introduceASupport}</Grid>
-          <Grid item xs={3}>{securityAPrivacy}</Grid>
+          <Grid item xs={3}></Grid>
+          <Grid item xs={3}>{contact}</Grid>
           <Grid item xs={2}>{social}</Grid>
           {warning}
         </Grid>
           : <>
             <Grid item xs={12}>{copyRight}</Grid>
-            <Grid item xs={12} className={classes.paddingTop}>{introduceASupport}</Grid>
-            <Grid item xs={12} className={classes.paddingTop}>{securityAPrivacy}</Grid>
+            <Grid item xs={12} className={classes.paddingTop}></Grid>
+            <Grid item xs={12} className={classes.paddingTop}></Grid>
             <Grid item xs={12} className={classes.paddingBoth}>{social}</Grid>
             {warning}
           </>}

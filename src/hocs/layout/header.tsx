@@ -3,14 +3,12 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import {
   AppBar, Toolbar, Typography, useMediaQuery
 } from '@material-ui/core'
-import UserTab from './headers/userTab'
-import AccountTab from './headers/accountTab'
 import LeftMenuTab from './headers/leftMenu'
 import SettingMenu from './headers/settingsMenu'
-import AuthButtonGroup from './headers/authButtonGroup'
 
-// import drakenxImage from 'root/asserts/images/drakenx.svg'
-// import drakenxImageNotext from 'root/asserts/images/logo_notext.svg'
+import logoImage from 'root/asserts/images/logo_60.png'
+import logo45Image from 'root/asserts/images/logo_45.png'
+import Color from 'root/color'
 
 interface HeaderProps {
   isFixed: boolean
@@ -22,7 +20,7 @@ const useStyles = (props: HeaderProps) => (makeStyles((theme: Theme) =>
     },
     toolBar: {
       height: '70px',
-      background: '#15181d',
+      background: Color.mainBgColor,
       display: 'flex',
       justifyContent: 'space-between',
       borderBottom: '1px solid #2d3339',
@@ -59,16 +57,13 @@ const Header = (props: HeaderProps) => {
       <Toolbar className={classes.toolBar}>
         <Typography className={classes.title}>
           {// eslint-disable-next-line
-            // minWidth767 ? <img alt='drakenx-image' src={drakenxImage}></img>
+            minWidth767 ? <img alt='drakenx-image' src={logoImage}></img>
               // eslint-disable-next-line
-              // : <img alt='drakenx-image-no-text' src={drakenxImageNotext} height='45px'></img>
+              : <img alt='drakenx-image-no-text' src={logo45Image} height='45px'></img>
           }
         </Typography>
         {isAuthen && <LeftMenuTab minWidth767={minWidth767} />}
         <div className={classes.rightMenu}>
-          {!isAuthen && <AuthButtonGroup />}
-          {isAuthen && minWidth1190 && <AccountTab />}
-          {isAuthen && minWidth1190 && <UserTab />}
           <SettingMenu isAuthen={isAuthen} minWidth1190={minWidth1190}/>
         </div>
       </Toolbar>

@@ -2,6 +2,7 @@ import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import Button, { buttonType } from './button'
+import Color from 'root/color'
 
 const useStyles = (props: any) => (makeStyles((theme: Theme) => createStyles({
   root: {
@@ -27,7 +28,8 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) => createStyles({
     padding: '10px',
     fontSize: '100%',
     verticalAlign: 'baseline',
-    borderRadius: '2%'
+    borderRadius: '2%',
+    backgroundColor: Color.mainBgColor
   },
   actionButton: {
     display: 'flex',
@@ -40,7 +42,8 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) => createStyles({
   titleText: {
     fontWeight: 500,
     fontSize: '16px',
-    color: '#15181d',
+    color: Color.coffee,
+    textTransform: 'uppercase',
     padding: '10px 20px',
   },
   contentText: {
@@ -72,7 +75,8 @@ const useStyles = (props: any) => (makeStyles((theme: Theme) => createStyles({
 
 const MaterialUICard = (props: any) => {
   const classes = useStyles(props)
-  const { mediaImage, className, content: { title, description }, actions: { buttonText, ButtonIcon, disabled } } = props
+  const { mediaImage, className, content: { title, description }, actions = {} } = props
+  const { buttonText, ButtonIcon, disabled } = actions
   return (
     <Card className={[classes.root, className].join(' ')}>
       <img
@@ -83,11 +87,11 @@ const MaterialUICard = (props: any) => {
         <Typography className={classes.titleText}>{title}</Typography>
         <Typography className={classes.contentText}>{description}</Typography>
       </CardContent>
-      <CardActions className={classes.cardActions}>
+      {props.actions && <CardActions className={classes.cardActions}>
         <Button type={buttonType.Primary} className={[classes.actionButton, disabled && classes.actionButtonDisabled].join(' ')} disabled={disabled}>
-          <ButtonIcon /> {buttonText}
+          {ButtonIcon && <ButtonIcon />}{buttonText || ''}
         </Button>
-      </CardActions>
+      </CardActions>}
     </Card>
   )
 }
