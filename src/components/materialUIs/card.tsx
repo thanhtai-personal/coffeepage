@@ -1,12 +1,11 @@
 import React from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
-import { Card, CardActions, CardContent, Typography, CardMedia } from '@material-ui/core'
+import { Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import Button, { buttonType } from './button'
 import Color from 'root/color'
 
 const useStyles = (props: any) => (makeStyles((theme: Theme) => createStyles({
   root: {
-    marginRight: '20px',
     background: '#fff',
     display: 'flex',
     flexDirection: 'column',

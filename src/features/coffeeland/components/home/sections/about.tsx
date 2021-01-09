@@ -82,7 +82,7 @@ const Reporting = (props: any) => {
         <Typography align='center' variant={'h2'} className={classes.title}>
           {text.title}
         </Typography>
-        <Grid item container xs={12} className={classes.gameCards}>
+        <Grid item container spacing={2} xs={12} className={classes.gameCards}>
           {(cards || []).map((card: any, index: number) => (<Grid key={`${card.key}-${index}`} item xs={minWidth767 ? minWidth1190 ? 4 : 5 : 12}>
             <Card
               className={classes.entertainmentCard}
